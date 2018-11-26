@@ -1,0 +1,45 @@
+<div class="card mt-2">
+  <div class="card-header bg-primary text-length">
+
+  </div>
+    <div class="card-body">
+      <table class="table table-hover">
+
+        <thead>
+        <tr>
+          <th scope="col">Matrícula</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Data de Nascimento</th>
+          <th scope="col">Endereço</th>
+          <th scope="col">Responsável Financeiro</th>
+          <th scope="col">CPF Responsável Financeiro</th>
+          <th scope="col">Email</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+<tr *ngFor="let aluno of aluno | async" >
+
+  <td>{{ aluno.Matricula }}</td>
+  <td>{{ aluno.Nome }}</td>
+  <td>{{ aluno.DataNascimento }}</td>
+  <td>{{ aluno.Endereco }}</td>
+  <td>{{ aluno.RespFinanceiro }}</td>
+  <td>{{ aluno.RespCpf }}</td>
+  <td>{{ aluno.Email }}</td>
+
+  <td>
+    <button type="button" class="btn btn-default" (click)="edit(aluno, aluno.key)">Editar</button>
+
+  </td>
+  <td>
+    <button type="button" class="btn btn-danger ml-2" (click)="remove(aluno.key)">Excluir</button>
+  </td>
+
+</tr>
+      </tbody>
+      </table>
+
+    </div>
+</div>
